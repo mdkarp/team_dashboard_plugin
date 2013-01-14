@@ -1,0 +1,17 @@
+default: &pg
+  adapter: postgresql
+  host: localhost
+  username: team_dashboard
+  password: team
+
+development:
+  <<: *pg
+  database: team_dashboard_development
+
+test:
+  <<: *pg
+  database: team_dashboard_test
+
+production:
+  <<: *pg
+  database: team_dashboard_production

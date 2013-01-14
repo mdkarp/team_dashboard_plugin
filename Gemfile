@@ -1,17 +1,38 @@
-source "http://rubygems.org"
+source "https://rubygems.org"
 
-# Declare your gem's dependencies in team_dashboard.gemspec.
-# Bundler will treat runtime dependencies like base dependencies, and
-# development dependencies will be added by default to the :development group.
-gemspec
+gem "rails", "~> 3.2.8"
 
-# jquery-rails is used by the dummy application
-gem "jquery-rails"
+gem "jquery-rails", "~> 2.1.2"
+gem "less-rails", "~> 2.2.3"
+gem "less-rails-bootstrap", "~> 2.1.1"
+gem "rails-backbone", "~> 0.7.2"
+gem "handlebars_assets", "~> 0.6.4"
 
-# Declare any dependencies that are still in development here instead of in
-# your gemspec. These might include edge Rails or gems from your path or
-# Git. Remember to move these dependencies to your gemspec before releasing
-# your gem to rubygems.org.
+gem "pg"
 
-# To use debugger
-# gem 'debugger'
+gem "thin", "~> 1.4.1"
+gem "foreman"
+gem "faraday", "~> 0.8.4"
+gem "faraday_middleware", "~> 0.8.8"
+gem "multi_xml", "~> 0.5.1"
+gem "libxml-ruby", "~> 2.3.3"
+gem "nokogiri", "~> 1.5.5"
+
+group :test, :development do
+  gem "rspec-rails"
+  gem "factory_girl_rails"
+  gem "jasmine"
+  gem "jasminerice"
+  gem "guard-jasmine"
+  gem "rb-fsevent", "~> 0.9.1"
+  gem "mocha", :require => false
+end
+
+group :assets do
+  gem "sass-rails", "~> 3.2.5"
+
+  # See https://github.com/sstephenson/execjs#readme for more supported runtimes
+  gem "therubyracer", "~> 0.10.2"
+
+  gem "uglifier", ">= 1.0.3"
+end

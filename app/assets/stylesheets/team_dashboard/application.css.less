@@ -1,0 +1,366 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+
+ *= require twitter/bootstrap
+ *= require theme/index
+ *= require backbone-forms-bootstrap
+ *= require select2
+ *= require rickshaw.min
+ *= jquery-ui-1.8.20.custom
+
+ *= require graph
+ *= require_self
+*/
+
+
+
+/****************** modal dialog ****************/
+
+@import "theme/variables";
+@import "twitter/bootstrap/mixins";
+
+select,
+textarea,
+input[type="text"],
+input[type="password"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="date"],
+input[type="month"],
+input[type="time"],
+input[type="week"],
+input[type="number"],
+input[type="email"],
+input[type="url"],
+input[type="search"],
+input[type="tel"],
+input[type="color"],
+.uneditable-input {
+  color: @grayDark;
+}
+
+.modal .modal-body {
+  // using height: 500px; would make them all the same size
+  max-height: 500px;
+
+  overflow-y: auto;
+}
+
+// in form selectable-list has same fixed width as select control
+form .selectable-list {
+  width: 220px;
+}
+
+.selectable-list {
+  .border-radius(@inputBorderRadius);
+
+  background-color: #ccc;
+  padding: 1px;
+  margin: 5px 0 0 0;
+  list-style: none;
+}
+
+.selectable-list > li {
+  color: @grayDark;
+  padding: 3px;
+  padding-left: 4px;
+  margin: 2px;
+  background-color: #CCC;
+  border: 1px #bbb solid;
+
+  &:hover {
+    background-color: #DDD;
+  }
+
+  .text {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display:block;
+    width: 80%;
+  }
+
+  .actions {
+    margin-top: -18px;
+    cursor: pointer;
+    display:block;
+    float: right;
+  }
+
+}
+
+#filtered-list-container ul {
+  // width: 528px;
+  height: 300px;
+  overflow: -moz-scrollbars-vertical;
+  overflow-y: scroll;
+  cursor: pointer;
+
+  li:hover {
+    background-color: #DDD;
+  }
+
+  li.selected {
+    background-color: #EEE;
+  }
+
+  li > .text {
+    width: 100%;
+  }
+}
+
+.input-xxlarge {
+  width: 350px;
+}
+
+#function-help {
+  overflow: hidden;
+  word-wrap:break-word;
+
+  margin-top: 4em;
+}
+
+/******************* dashboard *****************/
+
+[contenteditable]:hover:after {
+  content: 'click to edit';
+
+  font-style: italic;
+  font-size: 12px;
+  font-family: sans-serif;
+  color: #ccc;
+
+  position: absolute;
+  margin-top: 5px;
+  padding-left: 10px;
+}
+
+[contenteditable]:hover, [contenteditable]:focus {
+  background-color: rgba(100, 100, 100, 0.4);
+  border: 2px dotted rgba(100, 100, 100, 0.9);
+
+  // compensate padding and border
+  margin-left: -7px;
+  padding: 5px;
+
+  outline: none;
+}
+
+.portlet {
+  height: 325px;
+  margin: 0px 10px 10px 0px;
+  float: left;
+}
+
+.portlet:first-child { margin-left: 0px !important; }
+
+/* TODO: check why jquery sortable depends on id instead of class here */
+#widget-span-1 { width: 320px; }
+#widget-span-2 { width: 670px; }
+#widget-span-3 { width: 1020px; }
+
+.portlet-minimized { height: auto !important; }
+
+.portlet-header {
+  border-bottom: 1px solid #33B5E5;
+  margin-bottom: 0.2em;
+  padding-bottom: 0.4em;
+
+  cursor: move;
+
+  text-transform:uppercase;
+}
+
+.portlet-header .ui-icon {
+  float: right;
+  cursor: pointer;
+  margin-left: 8px;
+}
+
+.portlet-content {
+  padding: 0.4em;
+  margin-top: 1em;
+}
+
+.portlet-minimized .portlet-content { display: none !important; }
+
+.ui-sortable-placeholder {
+  border: 2px dashed #FFF;
+  visibility: visible !important;
+  height: 325px !important;
+}
+
+.ui-sortable-placeholder * {
+  visibility: hidden;
+}
+
+/******************* widget content ****************/
+
+/*** triple row ***/
+
+.triple-row {
+  height: 60px;
+  margin: 20px 0 0px 0;
+  padding-left: 20px;
+  padding-bottom: 10px;
+  overflow: hidden;
+
+  .boolean-value {
+    float: left;
+    width: 60px;
+    height: 40px;
+    margin-top: 10px;
+    margin-right: 20px;
+  }
+
+  .ci-value {
+    float: left;
+    width: 60px;
+    height: 40px;
+    margin-top: 10px;
+    margin-right: 20px;
+  }
+
+  .number-value {
+    float: left;
+    margin-right: 10px;
+    font-weight: bold;
+    -webkit-text-stroke: 1px #330;
+  }
+
+  .value-size-medium {
+    font-size: 60px;
+    line-height: 60px;
+  }
+
+  .value-size-small {
+    font-size: 40px;
+    line-height: 40px;
+  }
+
+  .label-container {
+    margin-top: 20px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .label-container-two-rows {
+    margin-top: 15px;
+    margin-right: 15px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .label {
+    font-size: 16px;
+    line-height: 16px;
+    background: 0;
+  }
+
+  .secondary-label {
+    padding-left: 5px;
+    font-size: 15px;
+    line-height: 16px;
+    foreground-color: #ccc;
+    background: 0;
+  }
+
+}
+
+/*** double row ***/
+
+.double-row {
+  margin-left: 10px;
+  margin-top: 30px;
+  padding-bottom: 15px;
+  width: 300px;
+  height: 100px;
+  display:block;
+
+  .value {
+    font-weight: bold;
+    color: #eee;
+    -webkit-text-stroke: 1px #330;
+  }
+
+  .value-size-large {
+    font-size: 100px;
+  }
+  .value-size-medium {
+    font-size: 80px;
+  }
+  .value-size-small {
+    font-size: 60px;
+  }
+
+  .secondary-value {
+    margin-left: 10px;
+    font-size: 40px;
+    font-weight: bold;
+  }
+
+  .secondary-value-container {
+    margin-top: 50px;
+    margin-left: 18px;
+
+    .percentage {
+      font-size: 20px;
+      font-weight: bold;
+    }
+  }
+}
+
+/*** misc ***/
+
+.arrow-up, .arrow-down {
+  display: inline-block;
+  margin-bottom: 5px;
+}
+
+.arrow-up {
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 10px solid #8ec15c;
+}
+
+.arrow-down {
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 10px solid #D26771;
+}
+
+.red {
+  background: #D26771;
+  border: 2px solid darken(#D26771, 8%);
+}
+
+.green {
+  background: #8ec15c;
+  border: 2px solid darken(#8ec15a, 10%);
+}
+
+.gray {
+  background: #ccc;
+  border: 2px solid darken(#ccc, 10%);
+}
+
+.color-up {
+  color: #8ec15c;
+}
+
+.color-down {
+  color: #D26771;
+}

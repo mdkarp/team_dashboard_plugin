@@ -1,4 +1,5 @@
-module TeamDashboard
-  module ApplicationHelper
-  end
+module ApplicationHelper
+	def humanize_timestamp(timestamp)
+		Time.at(timestamp)
+	end
 end

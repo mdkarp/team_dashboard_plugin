@@ -10,6 +10,39 @@
 // WARNING: THE FIRST BLANK LINE MARKS THE END OF WHAT'S TO BE PROCESSED, ANY BLANK LINE SHOULD
 // GO AFTER THE REQUIRES BELOW.
 //
+
 //= require jquery
 //= require jquery_ujs
-//= require_tree .
+//= require jquery-ui-1.8.20.custom.min.js
+//= require underscore
+//= require backbone
+//= require handlebars
+//= require twitter/bootstrap
+//= require backbone-forms
+//= require backbone-forms-list
+//= require backbone-forms-bootstrap
+//= require backbone-forms-bootstrap-modal
+//= require bootbox
+
+//= require d3.v2.min
+//= require rickshaw
+//= require flotr2
+//= require moment.min
+//= require select2
+//= require list.min
+
+//= require backbone_extensions
+//= require app
+//= require router
+//= require helpers
+//= require graphite_functions
+//= require graphite
+//= require handlebars_helpers
+//= require jquery_plugins
+//= require behaviours
+//= require ajax_error_handler
+
+//= require_tree ./models
+//= require_tree ./collections
+//= require_tree ./views
+//= require_tree ./templates
